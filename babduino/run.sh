@@ -16,4 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+set -euo pipefail
+IFS=$'\n\t'
+
 mvn exec:java -Dexec.mainClass="com.cafebab.app.Main" $*
