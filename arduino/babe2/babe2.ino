@@ -50,6 +50,8 @@ void loop() {
     countFree = 0;
     stateFree = false;
     postState();
+  } else {
+    countFree = 0;
   }
 }
 
