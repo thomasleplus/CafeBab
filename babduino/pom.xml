@@ -40,9 +40,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
   <dependencies>
     <dependency>
-      <groupId>com.rapplogic.xbee</groupId>
+      <groupId>com.rapplogic</groupId>
       <artifactId>xbee-api</artifactId>
-      <version>0.9</version>
+      <version>0.9.3</version>
     </dependency>
     <dependency>
       <groupId>org.rxtx</groupId>
