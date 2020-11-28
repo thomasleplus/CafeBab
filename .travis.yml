@@ -1,0 +1,24 @@
+language: java
+sudo: false
+install: true
+
+jdk:
+  - openjdk8
+  - openjdk9
+  - openjdk10
+  - openjdk11
+  - openjdk12
+  - openjdk13
+  - openjdk14
+  - oraclejdk9
+  - oraclejdk11
+  - oraclejdk12
+  - oraclejdk13
+  - oraclejdk14
+
+cache:
+  directories:
+    - "${HOME}/.m2/repository"
+
+notifications:
+  email: true

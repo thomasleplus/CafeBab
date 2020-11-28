@@ -14,6 +14,8 @@ cache:
 verify:jdk8:
   stage: test
   image: maven:3-jdk-8
+  before_script:
+    - cd babduino
   script:
     - './mvnw $MAVEN_CLI_OPTS verify'
   only:
@@ -22,6 +24,8 @@ verify:jdk8:
 verify:jdk11:
   stage: test
   image: maven:3-jdk-11
+  before_script:
+    - cd babduino
   script:
     - './mvnw $MAVEN_CLI_OPTS verify'
   only:
