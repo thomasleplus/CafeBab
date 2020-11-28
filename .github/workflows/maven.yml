@@ -24,7 +24,7 @@ jobs:
         java-version: ${{ matrix.java }}
     - name: Build with Maven
       working-directory: babduino
-      run: ./mvnw -B verify
+      run: ./mvnw --batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true verify
     - name: Upload artifacts
       uses: actions/upload-artifact@master
       with:
