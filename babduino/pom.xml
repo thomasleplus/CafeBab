@@ -51,5 +51,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <sonar.projectKey>thomasleplus_CafeBab</sonar.projectKey>
+    <sonar.organization>thomasleplus-github</sonar.organization>
+    <sonar.host.url>https://sonarcloud.io</sonar.host.url>
   </properties>
 </project>
