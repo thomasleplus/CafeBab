@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Babduino - Arduino project to detect usage of a table football.
 # Copyright (C) 2016 Thomas Leplus
@@ -19,4 +19,4 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-mvn exec:java -Dexec.mainClass="com.cafebab.app.Main" $*
+mvn exec:java -Dexec.mainClass="com.cafebab.app.Main" "$@"
