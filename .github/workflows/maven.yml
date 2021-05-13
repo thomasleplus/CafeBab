@@ -28,7 +28,7 @@ jobs:
       working-directory: babduino
       run: ./mvnw --batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true verify
     - name: Scan with SonarCloud
-      if: ${{ matrix.java == 11 }}
+      if: ${{ matrix.java == 11 && github.token != '' }}
       working-directory: babduino
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
