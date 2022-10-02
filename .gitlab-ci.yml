@@ -42,7 +42,7 @@ verify:openjdk17:
   only:
     - master
 
-verify:openjdk17:
+verify:openjdk19:
   stage: test
   image: maven:3-openjdk-19
   before_script:
