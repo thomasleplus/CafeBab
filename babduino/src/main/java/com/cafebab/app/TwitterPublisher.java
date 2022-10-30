@@ -7,7 +7,6 @@ import java.util.Locale;
 import org.apache.log4j.Logger;
 
 import twitter4j.Twitter;
-import twitter4j.TwitterFactory;
 
 public class TwitterPublisher implements Runnable {
 
@@ -51,8 +50,8 @@ public class TwitterPublisher implements Runnable {
 					tweet = BABY_KO + convert(sinceStart) + " ("
 							+ sdf.format(startD) + ").";
 				}
-				Twitter twitter = new TwitterFactory().getInstance();
-				twitter.updateStatus(tweet);
+				Twitter twitter = Twitter.getInstance();
+				twitter.v1().tweets().updateStatus(tweet);
 				logger.info("Twitter published: " + tweet);
 			} catch (Exception e) {
 				logger.error(e);
