@@ -39,8 +39,9 @@ super linter:
       - ''
   stage: check
   variables:
+    VALIDATE_ALL_CODEBASE: true
     FILTER_REGEX_EXCLUDE: '(gradlew|gradlew.bat|gradle/*|mvnw|mvnw.cmd|.mvn/*)'
-    RUN_LOCAL: 'true'
+    RUN_LOCAL: true
   before_script:
     - 'ln -s "$(pwd)" /tmp/lint'
   script:
