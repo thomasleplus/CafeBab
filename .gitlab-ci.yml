@@ -30,6 +30,9 @@ cache:
 sast:
   stage: check
 
+secret_detection:
+  stage: check
+
 verify:openjdk8:
   stage: test
   image: maven:3-openjdk-8
