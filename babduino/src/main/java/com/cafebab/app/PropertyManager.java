@@ -8,9 +8,8 @@ public class PropertyManager {
 
 	static {
 		try {
-			props.load(PropertyManager.class
-					.getResourceAsStream("/babduino.properties"));
-		} catch (Exception e) {
+			props.load(PropertyManager.class.getResourceAsStream("/babduino.properties"));
+		} catch (final Exception e) {
 			e.printStackTrace();
 		}
 	}
@@ -19,17 +18,17 @@ public class PropertyManager {
 		// Singleton
 	}
 
-	public static String get(String key) {
+	public static String get(final String key) {
 		synchronized (props) {
 			return props.getProperty(key);
 		}
 	}
 
-	public static int getInt(String key) {
+	public static int getInt(final String key) {
 		return Integer.parseInt(get(key));
 	}
 
-	public static long getLong(String key) {
+	public static long getLong(final String key) {
 		return Long.parseLong(get(key));
 	}
 

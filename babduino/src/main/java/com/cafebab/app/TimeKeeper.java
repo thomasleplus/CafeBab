@@ -16,7 +16,7 @@ public class TimeKeeper {
 		logger.info("TimeKeeper initialized");
 	}
 
-	public void set(Date date) {
+	public void set(final Date date) {
 		synchronized (lock) {
 			last = date;
 		}

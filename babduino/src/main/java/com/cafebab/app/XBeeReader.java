@@ -27,43 +27,43 @@ public class XBeeReader {
 	public Measure readMeasure() {
 		while (true) {
 			try {
-				XBeeResponse response = xbee.getResponse();
+				final XBeeResponse response = xbee.getResponse();
 				if (response == null) {
 					continue;
 				}
-				int[] bytes = response.getProcessedPacketBytes();
-				StringBuilder packet = new StringBuilder("packet: ");
-				for (int b : bytes) {
+				final int[] bytes = response.getProcessedPacketBytes();
+				final StringBuilder packet = new StringBuilder("packet: ");
+				for (final int b : bytes) {
 					if (b >= 0 && b <= 15) {
 						packet.append(0);
 					}
 					packet.append(Integer.toHexString(0xFF & b));
 				}
 				logger.debug(packet.toString());
-				StringBuilder sb = new StringBuilder();
+				final StringBuilder sb = new StringBuilder();
 				for (int i = 6; i < bytes.length - 3; i++) {
-					char c = (char) bytes[i];
+					final char c = (char) bytes[i];
 					if (c >= '0' && c <= '9' || c == ',') {
 						sb.append(c);
 					}
 
 				}
-				String line = sb.toString();
+				final String line = sb.toString();
 				logger.info("data: " + line);
-				Measure measure = new Measure();
-				String[] parts = line.split(",");
+				final Measure measure = new Measure();
+				final String[] parts = line.split(",");
 				measure.setSensor(Integer.parseInt(clean(parts[0])));
 				measure.setValue(Integer.parseInt(clean(parts[1])));
 				measure.setClock(Integer.parseInt(clean(parts[2])));
 				measure.setDate(new Date());
 				return measure;
-			} catch (Exception e) {
+			} catch (final Exception e) {
 				logger.error(e);
 			}
 		}
 	}
 
-	public String clean(String s) {
+	public String clean(final String s) {
 		return s.replaceAll("[\\D]", "");
 	}
 
