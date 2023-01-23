@@ -30,13 +30,6 @@ jobs:
     - name: Build with Maven
       working-directory: babduino
       run: ./mvnw --batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true verify
-    - name: Scan with SonarCloud
-      working-directory: babduino
-      env:
-        GITHUB_TOKEN: ${{ github.token }}
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      if: ${{ matrix.java == 11 && env.SONAR_TOKEN != '' }}
-      run: ./mvnw --batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=false -DdeployAtEnd=false org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
     - name: Upload artifacts
       if: ${{ matrix.java == 8 }}
       uses: actions/upload-artifact@v3
