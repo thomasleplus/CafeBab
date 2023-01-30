@@ -18,3 +18,5 @@ jobs:
       - name: Check the versions
         working-directory: babduino
         run: /opt/maven-check-versions.sh
+      - name: Clean up
+        run: rm "${HOME}/.m2/settings.xml"
