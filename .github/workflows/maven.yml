@@ -48,7 +48,7 @@ jobs:
         # shellcheck disable=SC2086
         ./mvnw ${MAVEN_CLI_OPTS} -DdependencyCheck.skip=true verify
     - name: Upload artifacts
-      if: ${{ matrix.java == 8 }}
+      if: ${{ matrix.java == 17 }}
       uses: actions/upload-artifact@v3
       with:
         name: cafebab
