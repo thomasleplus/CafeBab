@@ -51,7 +51,13 @@ public class Measure {
 		return true;
 	}
 
-	public int getSensor() {
+	@Override
+    public String toString() {
+        return "Measure [sensor=" + sensor + ", value=" + value + ", clock="
+                + clock + ", date=" + date + "]";
+    }
+
+    public int getSensor() {
 		return sensor;
 	}
 

@@ -24,11 +24,11 @@ public class PropertyManager {
 		}
 	}
 
-	public static int getInt(final String key) {
+	public static int getInt(final String key) throws NumberFormatException {
 		return Integer.parseInt(get(key));
 	}
 
-	public static long getLong(final String key) {
+	public static long getLong(final String key) throws NumberFormatException {
 		return Long.parseLong(get(key));
 	}
 
