@@ -81,6 +81,17 @@
       <groupId>com.rapplogic</groupId>
       <artifactId>xbee-api</artifactId>
       <version>0.9.3</version>
+      <exclusions>
+        <exclusion> <!-- replaced with reload4j below -->
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.reload4j</groupId>
+      <artifactId>reload4j</artifactId>
+      <version>1.2.18.1</version>
     </dependency>
     <dependency>
       <groupId>org.rxtx</groupId>
