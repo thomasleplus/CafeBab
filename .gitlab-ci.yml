@@ -52,7 +52,8 @@ super linter:
   variables:
     RUN_LOCAL: 'true'
     VALIDATE_ALL_CODEBASE: 'true'
-    FILTER_REGEX_EXCLUDE: '(gradlew|gradlew.bat|gradle/*|mvnw|mvnw.cmd|.mvn/*)'
+    LINTER_RULES_PATH: '.'
+    FILTER_REGEX_EXCLUDE: '(gradlew|gradlew.bat|gradle/*|mvnw|mvnw.cmd|.m2/*|.mvn/**)'
   before_script:
     - 'ln -s "$(pwd)" /tmp/lint'
   script:
