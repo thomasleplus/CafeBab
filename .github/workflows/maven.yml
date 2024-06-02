@@ -31,6 +31,9 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: babduino
     strategy:
       matrix:
         java: [ 17, 19 ]
@@ -45,7 +48,6 @@ jobs:
         distribution: temurin
         java-version: ${{ matrix.java }}
     - name: Build with Maven
-      working-directory: babduino
       run: |
         # shellcheck disable=SC2086
         ./mvnw ${MAVEN_CLI_OPTS} -DdependencyCheck.skip=true verify
@@ -54,6 +56,6 @@ jobs:
       uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808 # v4.3.3
       with:
         name: ${{ env.REPOSITORY }}
-        path: babduino/target/
+        path: target/
     - name: Clean up
       run: rm "${HOME}/.m2/settings.xml"
