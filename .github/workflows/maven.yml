@@ -33,7 +33,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./babduino
+        working-directory: babduino
     strategy:
       matrix:
         java: [ 17, 19 ]
