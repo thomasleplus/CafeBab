@@ -1,5 +1,4 @@
 ---
-
 include:
   - template: Security/Secret-Detection.gitlab-ci.yml
   - template: Security/SAST.gitlab-ci.yml
@@ -38,7 +37,7 @@ OSV scanner:
     name: golang:latest
   stage: check
   before_script:
-    - 'go install github.com/google/osv-scanner/cmd/osv-scanner@v1'
+    - "go install github.com/google/osv-scanner/cmd/osv-scanner@v1"
   script:
     - 'PATH="${PATH}:$(go env GOPATH)/bin" osv-scanner -r .'
   timeout: 10 minutes
@@ -47,18 +46,18 @@ super linter:
   image:
     name: ghcr.io/super-linter/super-linter:latest
     entrypoint:
-      - ''
+      - ""
   stage: check
   variables:
-    RUN_LOCAL: 'true'
-    DEFAULT_BRANCH: 'main'
-    VALIDATE_ALL_CODEBASE: 'true'
-    LINTER_RULES_PATH: '.'
-    FILTER_REGEX_EXCLUDE: '(gradlew|gradlew.bat|gradle/*|mvnw|mvnw.cmd|.m2/*|.mvn/**)'
+    RUN_LOCAL: "true"
+    DEFAULT_BRANCH: "main"
+    VALIDATE_ALL_CODEBASE: "true"
+    LINTER_RULES_PATH: "."
+    FILTER_REGEX_EXCLUDE: "(gradlew|gradlew.bat|gradle/*|mvnw|mvnw.cmd|.m2/*|.mvn/**)"
   before_script:
     - 'ln -s "$(pwd)" /tmp/lint'
   script:
-    - '/action/lib/linter.sh'
+    - "/action/lib/linter.sh"
   timeout: 10 minutes
 
 versions:
@@ -66,18 +65,18 @@ versions:
     name: leplusorg/maven-check-versions:1.0.0@sha256:e8f760bb1faf3d3c333d75810e82289fdd275688421cc8bad04cdbbc757ae5a5
   stage: check
   before_script:
-    - 'cd babduino'
+    - "cd babduino"
   script:
-    - '/opt/maven-check-versions.sh'
+    - "/opt/maven-check-versions.sh"
   timeout: 10 minutes
 
 verify:openjdk8:
   stage: test
   image: maven:3-openjdk-8-slim
   before_script:
-    - 'cd babduino'
+    - "cd babduino"
   script:
-    - './mvnw $MAVEN_CLI_OPTS verify'
+    - "./mvnw $MAVEN_CLI_OPTS verify"
   only:
     - master
 
@@ -85,9 +84,9 @@ verify:openjdk11:
   stage: test
   image: maven:3-openjdk-11-slim
   before_script:
-    - 'cd babduino'
+    - "cd babduino"
   script:
-    - './mvnw $MAVEN_CLI_OPTS verify'
+    - "./mvnw $MAVEN_CLI_OPTS verify"
   only:
     - master
 
@@ -95,9 +94,9 @@ verify:openjdk17:
   stage: test
   image: maven:3-openjdk-17-slim
   before_script:
-    - 'cd babduino'
+    - "cd babduino"
   script:
-    - './mvnw $MAVEN_CLI_OPTS verify'
+    - "./mvnw $MAVEN_CLI_OPTS verify"
   only:
     - master
 
@@ -105,8 +104,8 @@ verify:openjdk18:
   stage: test
   image: maven:3-openjdk-18-slim
   before_script:
-    - 'cd babduino'
+    - "cd babduino"
   script:
-    - './mvnw $MAVEN_CLI_OPTS verify'
+    - "./mvnw $MAVEN_CLI_OPTS verify"
   only:
     - master
