@@ -15,7 +15,7 @@
     <maven.compiler.source>${java.version}</maven.compiler.source>
     <maven.compiler.target>${java.version}</maven.compiler.target>
     <maven.compiler.release>${java.version}</maven.compiler.release>
-    <dependencyCheck.version>10.0.4</dependencyCheck.version>
+    <dependencyCheck.version>11.0.0</dependencyCheck.version>
     <dependencyCheck.skip>false</dependencyCheck.skip>
     <dependencyCheck.threshold>7</dependencyCheck.threshold>
   </properties>
@@ -116,7 +116,7 @@
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter</artifactId>
-      <version>5.11.2</version>
+      <version>5.11.3</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
