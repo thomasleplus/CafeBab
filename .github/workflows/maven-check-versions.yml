@@ -17,3 +17,5 @@ jobs:
         uses: docker://leplusorg/maven-check-versions:3.9.9@sha256:abdd53328be1c87d7bf21b868d47d7934b28dfc66e168d9625877616ab14d6da
         with:
           working_directory: babduino
+        env:
+          IGNORED_VERSIONS: ".+-(alpha|beta).+,4.0.0-M.+"
