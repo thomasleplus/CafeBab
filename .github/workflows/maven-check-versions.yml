@@ -18,4 +18,4 @@ jobs:
         with:
           working_directory: babduino
         env:
-          IGNORED_VERSIONS: ".+-(alpha|beta).+,4.0.0-M.+"
+          IGNORED_VERSIONS: "(?i).+-(alpha|beta).+,(?i).+-m\d+,(?i).+-rc\d+"
