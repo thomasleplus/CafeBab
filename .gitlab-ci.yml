@@ -70,21 +70,17 @@ maven check versions:
     - "/opt/maven-check-versions.sh"
   timeout: 10 minutes
 
-verify:openjdk17:
+verify:jdk17:
   stage: test
   image: maven:3-openjdk-17-slim
-  before_script:
-    - "cd babduino"
   script:
     - "./mvnw $MAVEN_CLI_OPTS verify"
   only:
     - master
 
-verify:openjdk21:
+verify:jdk21:
   stage: test
   image: maven:3-eclipse-temurin-21-alpine
-  before_script:
-    - "cd babduino"
   script:
     - "./mvnw $MAVEN_CLI_OPTS verify"
   only:
