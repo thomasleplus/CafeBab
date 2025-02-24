@@ -60,6 +60,7 @@
         <configuration>
           <failBuildOnCVSS>${dependencyCheck.threshold}</failBuildOnCVSS>
 	  <failOnError>true</failOnError>
+	  <nvdApiKey>${dependencyCheck.NVDApiKey}</nvdApiKey>
 	  <skip>${dependencyCheck.skip}</skip>
         </configuration>
         <executions>
