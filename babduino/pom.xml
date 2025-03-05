@@ -51,6 +51,10 @@
           <release>${java.minVersion}</release>
           <showDeprecation>true</showDeprecation>
           <showWarnings>true</showWarnings>
+          <compilerArgs>
+            <arg>-Xlint:all</arg>
+            <arg>-Xdoclint:all</arg>
+          </compilerArgs>
         </configuration>
       </plugin>
       <plugin>
