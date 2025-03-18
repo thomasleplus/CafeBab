@@ -9,6 +9,7 @@
   <description>Babyfoot + Arduino</description>
   <url>http://cafebab.com/</url>
   <properties>
+    <project.build.outputTimestamp>${env.SOURCE_DATE_EPOCH}</project.build.outputTimestamp>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     <java.minVersion>17</java.minVersion>
