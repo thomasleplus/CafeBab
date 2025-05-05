@@ -1,14 +1,10 @@
-/**
- * 
- */
 package com.cafebab.app;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
- * @author thomas
- *
+ * Test the Main class.
  */
 class TestMain {
 
