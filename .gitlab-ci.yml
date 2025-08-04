@@ -53,7 +53,7 @@ super linter:
     DEFAULT_BRANCH: "main"
     VALIDATE_ALL_CODEBASE: "true"
     LINTER_RULES_PATH: "."
-    FILTER_REGEX_EXCLUDE: "(gradlew|gradlew.bat|gradle/*|mvnw|mvnw.cmd|.m2/*|.mvn/**)"
+    FILTER_REGEX_EXCLUDE: "^(gradlew|gradlew\.bat|gradle/.*|mvnw|mvnw\.cmd|\.m2/.*|\.mvn/.*|\.aws/.*|\.docker/.*|\.git-credentials|\.ssh/.*|gitlab_conf/.*)$"
   before_script:
     - 'ln -s "$(pwd)" /tmp/lint'
   script:
