@@ -29,7 +29,7 @@ env:
     -DdeployAtEnd=true
 
 jobs:
-  build:
+  maven:
     runs-on: ubuntu-latest
     defaults:
       run:
