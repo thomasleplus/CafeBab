@@ -90,8 +90,8 @@ maven:jdk21:
   script:
     - "./mvnw $MAVEN_CLI_OPTS -DdependencyCheck.skip=true verify"
 
-maven:jdk24:
+maven:jdk25:
   stage: build
-  image: maven:3-eclipse-temurin-24-alpine
+  image: maven:3-eclipse-temurin-25-alpine
   script:
     - "./mvnw $MAVEN_CLI_OPTS -DdependencyCheck.skip=true verify"
