@@ -108,7 +108,7 @@
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>
       <artifactId>jersey-client</artifactId>
-      <version>4.0.0</version>
+      <version>4.0.1</version>
     </dependency>
     <dependency>
       <groupId>org.twitter4j</groupId>
