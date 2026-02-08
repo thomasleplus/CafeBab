@@ -35,16 +35,16 @@ public class TwitterPublisher implements Runnable {
       } catch (final InterruptedException e) {
       }
       try {
-        final Date startD = start.get();
-        final Date endD = end.get();
+        final Date startDate = start.get();
+        final Date endDate = end.get();
         final Date now = new Date();
-        final long sinceEnd = now.getTime() - endD.getTime();
-        final long sinceStart = now.getTime() - startD.getTime();
+        final long sinceEnd = now.getTime() - endDate.getTime();
+        final long sinceStart = now.getTime() - startDate.getTime();
         String tweet = null;
         if (sinceEnd > INTERVAL) {
-          tweet = BABY_OK + convert(sinceEnd) + " (" + sdf.format(endD) + ").";
+          tweet = BABY_OK + convert(sinceEnd) + " (" + sdf.format(endDate) + ").";
         } else {
-          tweet = BABY_KO + convert(sinceStart) + " (" + sdf.format(startD) + ").";
+          tweet = BABY_KO + convert(sinceStart) + " (" + sdf.format(startDate) + ").";
         }
         final Status status = Twitter.getInstance().v1().tweets().updateStatus(tweet);
         logger.info("Twitter published: " + status);
