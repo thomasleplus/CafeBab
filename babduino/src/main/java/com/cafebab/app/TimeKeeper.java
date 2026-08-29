@@ -3,6 +3,7 @@ package com.cafebab.app;
 import java.util.Date;
 import org.apache.log4j.Logger;
 
+/** Thread-safe holder for a single timestamp (e.g. the first/last activity time). */
 public class TimeKeeper {
 
   private final Logger logger = Logger.getLogger("com.cafebab");

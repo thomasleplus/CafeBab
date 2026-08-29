@@ -7,6 +7,7 @@ import com.rapplogic.xbee.api.XBeeResponse;
 import java.util.Date;
 import org.apache.log4j.Logger;
 
+/** Reads sensor measurements from the Arduino over the XBee serial link. */
 public class XBeeReader {
 
   private static final String PORT = PropertyManager.get("PORT");
@@ -39,6 +40,8 @@ public class XBeeReader {
         }
         logger.debug(packet.toString());
         final StringBuilder sb = new StringBuilder();
+        // Skip the XBee frame header (first 6 bytes) and trailer (last 3); the
+        // middle is the ASCII "sensor,value,clock" CSV payload.
         for (int i = 6; i < bytes.length - 3; i++) {
           final char c = (char) bytes[i];
           if (c >= '0' && c <= '9' || c == ',') {

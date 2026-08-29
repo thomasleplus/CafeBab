@@ -4,6 +4,7 @@ import com.cafebab.bo.Measure;
 import java.util.concurrent.LinkedBlockingQueue;
 import org.apache.log4j.Logger;
 
+/** Thread-safe queue buffering measurements between the XBee reader and the REST publisher. */
 public class QueueManager {
 
   private final Logger logger = Logger.getLogger("com.cafebab");
