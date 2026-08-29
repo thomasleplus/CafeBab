@@ -13,6 +13,6 @@ network and publishes it.
     (`babduino.properties`, `twitter4j.properties`, `log4j.properties`).
 - `src/main/java/com/cafebab/bo/Measure.java` — the measurement value object.
 - `lib/` — bundled native/serial dependencies (RXTX, xbee-api) with
-  `install.sh` to install them into the local Maven repo.
+  `install.sh` to install them into the local Maven repository.
 
 Build/run with the Maven wrapper (`./mvnw ...`); see `compile.sh` / `run.sh`.
