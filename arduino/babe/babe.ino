@@ -1,3 +1,6 @@
+// CafeBab table-football sensor (XBee variant): samples a knock/vibration
+// sensor and reports "sensor,value,clock" lines over Serial to the XBee link.
+
 // Serial
 const long BAUDS = 57600L; // 57600 bauds
 const unsigned long SERIAL_DELAY = 100L; // 100 ms

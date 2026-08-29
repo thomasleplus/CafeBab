@@ -7,6 +7,7 @@ import java.util.Properties;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
+/** Entry point: wires the XBee reader, queue and publishers, then runs the measurement loop. */
 public class Main {
 
   private static final int KNOCK = PropertyManager.getInt("KNOCK");
@@ -41,6 +42,8 @@ public class Main {
     while (true) {
       final Measure measure = reader.readMeasure();
       manager.publish(measure);
+      // A KNOCK marks table activity: advance the "end" time; if the table had
+      // been idle longer than INTERVAL, this knock also starts a new session.
       if (measure.getSensor() == KNOCK) {
         final Date last = end.get();
         end.set(measure.getDate());

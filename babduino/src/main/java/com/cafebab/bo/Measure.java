@@ -2,6 +2,7 @@ package com.cafebab.bo;
 
 import java.util.Date;
 
+/** A single sensor reading: sensor id, value, clock and timestamp. */
 public class Measure {
 
   private int sensor;
