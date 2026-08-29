@@ -10,6 +10,7 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import org.apache.log4j.Logger;
 
+/** Background thread that POSTs queued measurements to the CafeBab web service. */
 public class RESTPublisher implements Runnable {
 
   private static final String CAFEBAB_URL = PropertyManager.get("CAFEBAB_URL");

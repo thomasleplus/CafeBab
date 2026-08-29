@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import twitter4j.Twitter;
 import twitter4j.v1.Status;
 
+/** Background thread that periodically tweets whether the table has been idle or in use. */
 public class TwitterPublisher implements Runnable {
 
   private static final long TWITTER_FREQUENCY = PropertyManager.getLong("TWITTER_FREQUENCY");

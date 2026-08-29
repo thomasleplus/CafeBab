@@ -2,6 +2,7 @@ package com.cafebab.app;
 
 import java.util.Properties;
 
+/** Loads {@code babduino.properties} once and exposes its values as typed lookups. */
 public class PropertyManager {
 
   private static final Properties props = new Properties();

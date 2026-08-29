@@ -1,3 +1,6 @@
+// CafeBab table-football sensor (standalone variant): a PIR presence sensor
+// posts availability ("free"/"busy") straight to Twitter over Ethernet.
+
 #include <Ethernet.h>
 #include <SPI.h>
 #include <Twitter.h>
