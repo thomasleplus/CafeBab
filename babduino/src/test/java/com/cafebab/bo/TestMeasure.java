@@ -7,7 +7,8 @@ import org.junit.jupiter.api.Test;
 /** Test the Measure value object. */
 class TestMeasure {
 
-  private static Measure measure(final int sensor, final int value, final int clock, final Date date) {
+  private static Measure measure(
+      final int sensor, final int value, final int clock, final Date date) {
     final Measure m = new Measure();
     m.setSensor(sensor);
     m.setValue(value);
