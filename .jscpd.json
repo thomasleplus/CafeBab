@@ -1,3 +1,9 @@
 {
-  "ignore": [".gitlab-ci.yml", ".m2/**", "xbee/**"]
+  "ignore": [
+    ".gitlab-ci.yml",
+    ".m2/**",
+    "xbee/**",
+    ".github/workflows/osv-scanner-pr.yml",
+    ".github/workflows/osv-scanner.yml"
+  ]
 }
